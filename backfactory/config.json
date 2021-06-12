@@ -1,0 +1,7 @@
+{
+    "mongoUrl": "mongodb://test:test@3.141.11.180/apptest",
+    "port": 3000
+}
+       
+        
+       
