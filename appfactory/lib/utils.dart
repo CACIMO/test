@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:appfactory/model/alertMsg.dart';
 
-String urlDB = '3.141.11.180:3000';
+String urlDB = '3.141.11.180:3001';
 
 double mediaQuery(BuildContext ctx, String direction, double scale) {
   double result = 0;
