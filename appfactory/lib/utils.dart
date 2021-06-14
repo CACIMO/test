@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:appfactory/model/alertMsg.dart';
+import 'package:appfactory/model/new_factory.dart';
 
 String urlDB = 'localhost:3000';
 
@@ -38,7 +39,6 @@ Future httpGet(urlRoute) async {
 Future httpPost(urlRoute, Map<String, String>? data) async {
   var urlData = Uri.http(urlDB, urlRoute);
   var response = await http.post(urlData, body: data);
-  print(response.body);
   if (response.statusCode == 200)
     return jsonDecode(response.body);
   else
@@ -54,5 +54,17 @@ Future<void> alertMesage(BuildContext ctx, String title, String msgx) {
                 style: TextStyle(
                     fontFamily: 'Andika', fontSize: mediaQuery(ctx, 'h', .02))),
             content: AlertMsg(msg: msgx));
+      });
+}
+
+Future<void> alertNewFactory(BuildContext ctx) {
+  return showDialog<void>(
+      context: ctx,
+      builder: (BuildContext context) {
+        return new AlertDialog(
+            title: Text('Agregar Fabrica',
+                style: TextStyle(
+                    fontFamily: 'Andika', fontSize: mediaQuery(ctx, 'h', .02))),
+            content: NewFactory());
       });
 }

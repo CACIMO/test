@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:appfactory/utils.dart';
 
 class FactoryModel extends ChangeNotifier {
-  static List<Factory> factories = [];
+  List<Factory> factories = [
+    Factory(7837843, 'Coca Cola Company LTDA', 'Esto es una compania',
+        'CRA 26J ', 'SFSFF.JPG', 3217118192)
+  ];
 
   void addFactory(Factory fac) {
     factories.add(fac);

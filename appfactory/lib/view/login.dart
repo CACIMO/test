@@ -16,7 +16,8 @@ class _Login extends State<Login> {
 
     httpPost('login/noData', {'user': _user.text, 'pwd': _pass.text})
         .then((data) {
-      alertMesage(context, 'Login Exitoso', 'Usuario Logueado Exitosamente.');
+      alertMesage(context, 'Login Exitoso', 'Usuario Logueado Exitosamente.')
+          .then((value) => Navigator.pushNamed(context, '/facList'));
     }).catchError((onError) {
       String msg = 'Error en el servidor';
       if (onError['err'] == 'dataNull') msg = 'Datos del usurio incorrectos';
