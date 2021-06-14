@@ -31,6 +31,12 @@ class _NewFactoryState extends State<NewFactory> {
     if (this.fac != null)
       setState(() {
         edit = true;
+
+        controller['nit']!.text = this.fac!.nit.toString();
+        controller['tel']!.text = this.fac!.telefono.toString();
+        controller['des']!.text = this.fac!.descripcion;
+        controller['dir']!.text = this.fac!.direccion;
+        controller['rsl']!.text = this.fac!.razonSocial;
       });
   }
 
@@ -71,13 +77,6 @@ class _NewFactoryState extends State<NewFactory> {
 
   @override
   Widget build(BuildContext context) {
-    if (fac != null) {
-      controller['nit']!.text = this.fac!.nit.toString();
-      controller['tel']!.text = this.fac!.telefono.toString();
-      controller['des']!.text = this.fac!.descripcion;
-      controller['dir']!.text = this.fac!.direccion;
-      controller['rsl']!.text = this.fac!.razonSocial;
-    }
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
