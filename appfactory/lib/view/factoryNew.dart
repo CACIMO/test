@@ -42,7 +42,7 @@ class _NewFactoryState extends State<NewFactory> {
   }
 
   void addNewFactory() {
-    if (!edit)
+    if (!edit) {
       Provider.of<FactoryModel>(context, listen: false).addFactory(Factory(
           int.parse(controller['nit']!.text),
           controller['rsl']!.text,
@@ -50,7 +50,13 @@ class _NewFactoryState extends State<NewFactory> {
           controller['dir']!.text,
           'logo',
           int.parse(controller['tel']!.text)));
-    else
+
+      if (Provider.of<FactoryModel>(context, listen: false).errorAdd) {
+        alertMesage(context, 'Error', 'La empresa ya exisite.')
+            .then((value) => cancelar());
+      } else
+        cancelar();
+    } else {
       Provider.of<FactoryModel>(context, listen: false).modifyFactory(Factory(
           int.parse(controller['nit']!.text),
           controller['rsl']!.text,
@@ -59,7 +65,8 @@ class _NewFactoryState extends State<NewFactory> {
           'logo',
           int.parse(controller['tel']!.text)));
 
-    cancelar();
+      cancelar();
+    }
   }
 
   @override

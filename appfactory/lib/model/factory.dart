@@ -3,9 +3,16 @@ import 'package:appfactory/utils.dart';
 
 class FactoryModel extends ChangeNotifier {
   List<Factory> factories = [];
+  bool errorAdd = false;
 
   void addFactory(Factory fac) {
-    factories.add(fac);
+    errorAdd = false;
+    int pos = factories.indexWhere((ele) => ele.nit == fac.nit);
+    print(pos);
+    if (pos < 0) {
+      factories.add(fac);
+    } else
+      errorAdd = true;
     notifyListeners();
   }
 
