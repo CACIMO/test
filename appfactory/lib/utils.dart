@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:appfactory/model/factory.dart';
+import 'package:appfactory/model/factory_desc.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:appfactory/model/alertMsg.dart';
@@ -66,5 +68,16 @@ Future<void> alertNewFactory(BuildContext ctx) {
                 style: TextStyle(
                     fontFamily: 'Andika', fontSize: mediaQuery(ctx, 'h', .02))),
             content: NewFactory());
+      });
+}
+
+Future<void> alertDescFac(BuildContext ctx, Factory data) {
+  return showDialog<void>(
+      context: ctx,
+      builder: (BuildContext context) {
+        return new AlertDialog(
+            content: DescFactory(
+          data: data,
+        ));
       });
 }

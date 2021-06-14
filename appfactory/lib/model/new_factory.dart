@@ -41,95 +41,94 @@ class _NewFactoryState extends State<NewFactory> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: mediaQuery(context, 'h', .7),
-      child: Column(children: [
-        Row(children: [
-          Container(
-              padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
-              child: Text('NIT',
-                  style: TextStyle(
-                      fontSize: mediaQuery(context, 'h', .015),
-                      fontFamily: 'Andika')))
-        ]),
-        Row(children: [
-          Container(
-              width: mediaQuery(context, 'w', .6),
-              child: TextField(
-                  keyboardType: TextInputType.numberWithOptions(
-                      decimal: false, signed: false),
-                  maxLength: 10,
-                  controller: controller['nit'],
-                  decoration: InputDecoration()))
-        ]),
-        Row(children: [
-          Container(
-              padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
-              child: Text('Razón social',
-                  style: TextStyle(
-                      fontSize: mediaQuery(context, 'h', .015),
-                      fontFamily: 'Andika')))
-        ]),
-        Row(children: [
-          Container(
-              width: mediaQuery(context, 'w', .6),
-              child: TextField(
-                  maxLength: 50,
-                  controller: controller['rsl'],
-                  decoration: InputDecoration()))
-        ]),
-        Row(children: [
-          Container(
-              padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
-              child: Text('Dirección',
-                  style: TextStyle(
-                      fontSize: mediaQuery(context, 'h', .015),
-                      fontFamily: 'Andika')))
-        ]),
-        Row(children: [
-          Container(
-              width: mediaQuery(context, 'w', .6),
-              child: TextField(
-                  maxLength: 30,
-                  controller: controller['dir'],
-                  decoration: InputDecoration()))
-        ]),
-        Row(children: [
-          Container(
-              padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
-              child: Text('Telefono',
-                  style: TextStyle(
-                      fontSize: mediaQuery(context, 'h', .015),
-                      fontFamily: 'Andika')))
-        ]),
-        Row(children: [
-          Container(
-              width: mediaQuery(context, 'w', .6),
-              child: TextField(
-                  keyboardType: TextInputType.numberWithOptions(
-                      decimal: false, signed: false),
-                  maxLength: 10,
-                  controller: controller['tel'],
-                  decoration: InputDecoration()))
-        ]),
-        Row(children: [
-          Container(
-              padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
-              child: Text('Descripción',
-                  style: TextStyle(
-                      fontSize: mediaQuery(context, 'h', .015),
-                      fontFamily: 'Andika')))
-        ]),
-        Row(children: [
-          Container(
-              width: mediaQuery(context, 'w', .6),
-              child: TextField(
-                  maxLines: 5,
-                  maxLength: 100,
-                  controller: controller['des'],
-                  decoration: InputDecoration()))
-        ]),
-        Row(
-          children: [
+        height: mediaQuery(context, 'h', .7),
+        child: Column(children: [
+          Row(children: [
+            Container(
+                padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
+                child: Text('NIT',
+                    style: TextStyle(
+                        fontSize: mediaQuery(context, 'h', .015),
+                        fontFamily: 'Andika')))
+          ]),
+          Row(children: [
+            Container(
+                width: mediaQuery(context, 'w', .6),
+                child: TextField(
+                    keyboardType: TextInputType.numberWithOptions(
+                        decimal: false, signed: false),
+                    maxLength: 10,
+                    controller: controller['nit'],
+                    decoration: InputDecoration()))
+          ]),
+          Row(children: [
+            Container(
+                padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
+                child: Text('Razón social',
+                    style: TextStyle(
+                        fontSize: mediaQuery(context, 'h', .015),
+                        fontFamily: 'Andika')))
+          ]),
+          Row(children: [
+            Container(
+                width: mediaQuery(context, 'w', .6),
+                child: TextField(
+                    maxLength: 50,
+                    controller: controller['rsl'],
+                    decoration: InputDecoration()))
+          ]),
+          Row(children: [
+            Container(
+                padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
+                child: Text('Dirección',
+                    style: TextStyle(
+                        fontSize: mediaQuery(context, 'h', .015),
+                        fontFamily: 'Andika')))
+          ]),
+          Row(children: [
+            Container(
+                width: mediaQuery(context, 'w', .6),
+                child: TextField(
+                    maxLength: 30,
+                    controller: controller['dir'],
+                    decoration: InputDecoration()))
+          ]),
+          Row(children: [
+            Container(
+                padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
+                child: Text('Telefono',
+                    style: TextStyle(
+                        fontSize: mediaQuery(context, 'h', .015),
+                        fontFamily: 'Andika')))
+          ]),
+          Row(children: [
+            Container(
+                width: mediaQuery(context, 'w', .6),
+                child: TextField(
+                    keyboardType: TextInputType.numberWithOptions(
+                        decimal: false, signed: false),
+                    maxLength: 10,
+                    controller: controller['tel'],
+                    decoration: InputDecoration()))
+          ]),
+          Row(children: [
+            Container(
+                padding: EdgeInsets.only(top: mediaQuery(context, 'h', .01)),
+                child: Text('Descripción',
+                    style: TextStyle(
+                        fontSize: mediaQuery(context, 'h', .015),
+                        fontFamily: 'Andika')))
+          ]),
+          Row(children: [
+            Container(
+                width: mediaQuery(context, 'w', .6),
+                child: TextField(
+                    maxLines: 5,
+                    maxLength: 100,
+                    controller: controller['des'],
+                    decoration: InputDecoration()))
+          ]),
+          Row(children: [
             Expanded(
                 flex: 5,
                 child: Padding(
@@ -156,9 +155,7 @@ class _NewFactoryState extends State<NewFactory> {
                               fontSize: mediaQuery(context, 'h', .015),
                               fontFamily: 'Andika'))),
                 ))
-          ],
-        )
-      ]),
-    );
+          ])
+        ]));
   }
 }

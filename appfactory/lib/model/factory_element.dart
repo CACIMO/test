@@ -17,7 +17,7 @@ class _ItemFactoryState extends State<ItemFactory> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => print('hola'),
+      onTap: () => alertDescFac(context, fac),
       child: Column(children: [
         Container(
             padding: EdgeInsets.all(mediaQuery(context, 'w', .01)),
