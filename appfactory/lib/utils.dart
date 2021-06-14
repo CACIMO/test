@@ -1,11 +1,9 @@
 import 'dart:convert';
 
 import 'package:appfactory/model/factory.dart';
-import 'package:appfactory/model/factory_desc.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:appfactory/model/alertMsg.dart';
-import 'package:appfactory/model/new_factory.dart';
 
 String urlDB = 'localhost:3000';
 
@@ -56,28 +54,5 @@ Future<void> alertMesage(BuildContext ctx, String title, String msgx) {
                 style: TextStyle(
                     fontFamily: 'Andika', fontSize: mediaQuery(ctx, 'h', .02))),
             content: AlertMsg(msg: msgx));
-      });
-}
-
-Future<void> alertNewFactory(BuildContext ctx) {
-  return showDialog<void>(
-      context: ctx,
-      builder: (BuildContext context) {
-        return new AlertDialog(
-            title: Text('Agregar Fabrica',
-                style: TextStyle(
-                    fontFamily: 'Andika', fontSize: mediaQuery(ctx, 'h', .02))),
-            content: NewFactory());
-      });
-}
-
-Future<void> alertDescFac(BuildContext ctx, Factory data) {
-  return showDialog<void>(
-      context: ctx,
-      builder: (BuildContext context) {
-        return new AlertDialog(
-            content: DescFactory(
-          data: data,
-        ));
       });
 }

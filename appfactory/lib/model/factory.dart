@@ -2,16 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:appfactory/utils.dart';
 
 class FactoryModel extends ChangeNotifier {
-  List<Factory> factories = [
-    Factory(7837843, 'Coca Cola Company LTDA', 'Esto es una compania',
-        'CRA 26J ', 'SFSFF.JPG', 3217118192)
-  ];
+  List<Factory> factories = [];
 
   void addFactory(Factory fac) {
     factories.add(fac);
     notifyListeners();
   }
 
+  void remove(int index) {
+    factories.removeAt(index);
+    notifyListeners();
+  }
+
+  int getPosition(Factory fac) {
+    return factories.indexWhere((ele) => ele.nit == fac.nit);
+  }
+
+  void modifyFactory(Factory fac) {
+    int pos = getPosition(fac);
+    factories[pos] = fac;
+    notifyListeners();
+  }
   /* Item getById(int id) => Item(id, itemNames[id % itemNames.length]);
 
   Item getByPosition(int position) {
