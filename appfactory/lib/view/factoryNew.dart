@@ -54,8 +54,9 @@ class _NewFactoryState extends State<NewFactory> {
       if (Provider.of<FactoryModel>(context, listen: false).errorAdd) {
         alertMesage(context, 'Error', 'La empresa ya exisite.')
             .then((value) => cancelar());
-      } else
+      } else {
         cancelar();
+      }
     } else {
       Provider.of<FactoryModel>(context, listen: false).modifyFactory(Factory(
           int.parse(controller['nit']!.text),
@@ -64,7 +65,6 @@ class _NewFactoryState extends State<NewFactory> {
           controller['dir']!.text,
           'logo',
           int.parse(controller['tel']!.text)));
-
       cancelar();
     }
   }
