@@ -1,4 +1,3 @@
-const { ObjectId, ObjectID } = require('bson');
 let mongoose = require('mongoose');
 mongoose.pluralize(null);
 
@@ -40,3 +39,7 @@ let userSchema = mongoose.Schema({
         required:true
     }
 })
+
+module.exports = {
+    User: mongoose.model('user', userSchema)
+}

@@ -10,8 +10,10 @@ app.use(cors({
     origin: '*',
     credentials: true,
 }));
-
-
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
 mongoose.connect(conf.mongoUrl,  {useNewUrlParser: true, useUnifiedTopology: true})
 
 app.use('/',multer.single('file') , apiRoutes)

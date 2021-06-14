@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:appfactory/utils.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  Login({Key? key}) : super(key: key);
+
+  @override
+  _Login createState() => _Login();
+}
+
+class _Login extends State<Login> {
+  final TextEditingController _user = TextEditingController();
+  final TextEditingController _pass = TextEditingController();
+  bool login() {
+    bool resp = false;
+
+    httpPost('login/noData', {'user': _user.text, 'pwd': _pass.text})
+        .then((data) {
+      alertMesage(context, 'Login Exitoso', 'Usuario Logueado Exitosamente.');
+    }).catchError((onError) {
+      String msg = 'Error en el servidor';
+      if (onError['err'] == 'dataNull') msg = 'Datos del usurio incorrectos';
+      alertMesage(context, 'Login Fallido', msg);
+    });
+    return resp;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +58,9 @@ class Login extends StatelessWidget {
                           Row(children: [
                             Container(
                                 width: mediaQuery(context, 'w', .8),
-                                child: TextField(decoration: InputDecoration()))
+                                child: TextField(
+                                    controller: _user,
+                                    decoration: InputDecoration()))
                           ]),
                           Row(children: [
                             Container(
@@ -53,6 +76,7 @@ class Login extends StatelessWidget {
                             Container(
                                 width: mediaQuery(context, 'w', .8),
                                 child: TextField(
+                                    controller: _pass,
                                     enableSuggestions: false,
                                     autocorrect: false,
                                     obscureText: true,
@@ -65,7 +89,7 @@ class Login extends StatelessWidget {
                                     padding: EdgeInsets.only(
                                         top: mediaQuery(context, 'w', .1)),
                                     child: ElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: () => login(),
                                         child: Text('Iniciar Sesión',
                                             style: TextStyle(
                                                 fontSize: mediaQuery(
