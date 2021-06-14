@@ -1,6 +1,7 @@
 # Prueba
 
-Para ejecutar el Backend en local entrar en la carpeta backfactory (Tener instalado node js) correr los comandos 
+usuario y pass : admin/admin
+<br/>Para ejecutar el Backend en local entrar en la carpeta backfactory (Tener instalado node js) correr los comandos 
 
    <br/>npm install
    <br/>node server.js
